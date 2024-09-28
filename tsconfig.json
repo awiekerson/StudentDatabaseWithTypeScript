@@ -5,6 +5,7 @@
         "outDir": "./dist", 
         // always use this \/
         "strictNullChecks": true, 
+        // Only works for functions/ not variables
         "noImplicitAny": true
     }
 }

@@ -145,7 +145,7 @@ doubleNum(2);
 // HTML Elements
 
 function getName(input : HTMLInputElement| null) {
-    let name = input.value;
+    let name = input?.value;
     console.log(name);
 }
 //type assertion so that it trusts us that it will be as we say
