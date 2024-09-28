@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "rootDir": "./src",
+        "outDir": "./dist", 
+        // always use this \/
+        "strictNullChecks": true, 
+        "noImplicitAny": true
+    }
+}
