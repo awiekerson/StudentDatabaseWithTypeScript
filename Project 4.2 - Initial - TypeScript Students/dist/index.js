@@ -39,12 +39,7 @@ function selectTable() {
 function refreshTable(table, student) {
     table.querySelector("tbody").innerHTML = "";
     students.forEach((student, index) => {
-        if (student.focusArea && !student.dateRegistrationSuspended) {
-            addRow(table, students[index]);
-        }
-        // if (!student.focusArea) {
-        //     addRow(table, students[index]);
-        //     }
+        addRow(table, students[index]);
     });
 }
 //filters 

@@ -16,6 +16,14 @@ let students = `[
         "focusArea": "Civil Engineering"
     },
     {
+        "id": "575493",
+        "dateAdmission": "2022-06-08T11:10:55.511Z",
+        "firstName": "Emily",
+        "lastName": "Johnson",
+        "birthYear": "2000",
+        "focusArea": "Computer Science, Space Engineering"
+    },
+    {
         "id": "52634",
         "dateAdmission": "2020-12-20T09:20:40.511Z",
         "firstName": "Xia",
