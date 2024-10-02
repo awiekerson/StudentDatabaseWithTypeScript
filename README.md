@@ -8,5 +8,5 @@ ensuring adaptability across different filter combinations.
 In the future, I plan to add checkboxes for the different areas of focus that can be combined with any other filter, offering flexible and precise filtering 
 options.
 
-Check out the finalized project here: <a href="#">Student Database</a>
+Check out the finalized project here: <a href="https://awiekerson.github.io/StudentDatabaseWithTypeScript/">Student Database</a>
 
