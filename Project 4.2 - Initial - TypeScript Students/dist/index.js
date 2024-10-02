@@ -36,13 +36,56 @@ function selectTable() {
     return document.querySelector("#students-table");
 }
 // add a row
-function refreshTable(table, student) {
+function refreshTablewithFilter(table, student, filterFn) {
     table.querySelector("tbody").innerHTML = "";
-    students.forEach((student, index) => {
-        addRow(table, students[index]);
-    });
+    students.filter(filterFn).forEach(student => addRow(table, student));
+}
+function clearSelected() {
+    var _a, _b, _c, _d, _e;
+    (_a = document.querySelector('#all')) === null || _a === void 0 ? void 0 : _a.classList.remove('selected');
+    (_b = document.querySelector('#active')) === null || _b === void 0 ? void 0 : _b.classList.remove('selected');
+    (_c = document.querySelector('#inactive')) === null || _c === void 0 ? void 0 : _c.classList.remove('selected');
+    (_d = document.querySelector('#no-focus')) === null || _d === void 0 ? void 0 : _d.classList.remove('selected');
+    (_e = document.querySelector('#alphabetical-order')) === null || _e === void 0 ? void 0 : _e.classList.remove('selected');
+}
+function filters(table, student) {
+    var _a;
+    (_a = document.querySelector('#all')) === null || _a === void 0 ? void 0 : _a.classList.add('selected');
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach((button) => button.addEventListener('click', () => {
+        var _a, _b, _c, _d, _e;
+        const id = button.id;
+        switch (id) {
+            case 'all':
+                clearSelected();
+                (_a = document.querySelector('#all')) === null || _a === void 0 ? void 0 : _a.classList.add('selected');
+                refreshTablewithFilter(selectTable(), students, () => true);
+                break;
+            case 'active':
+                clearSelected();
+                (_b = document.querySelector('#active')) === null || _b === void 0 ? void 0 : _b.classList.add('selected');
+                refreshTablewithFilter(selectTable(), students, (student) => !student.dateRegistrationSuspended);
+                break;
+            case 'inactive':
+                clearSelected();
+                (_c = document.querySelector('#inactive')) === null || _c === void 0 ? void 0 : _c.classList.add('selected');
+                refreshTablewithFilter(selectTable(), students, (student) => !!student.dateRegistrationSuspended);
+                break;
+            case 'no-focus':
+                clearSelected();
+                (_d = document.querySelector('#no-focus')) === null || _d === void 0 ? void 0 : _d.classList.add('selected');
+                refreshTablewithFilter(selectTable(), students, (student) => !student.focusArea);
+                break;
+            case 'alphabetical-order':
+                clearSelected();
+                (_e = document.querySelector('#alphabetical-order')) === null || _e === void 0 ? void 0 : _e.classList.add('selected');
+                refreshTablewithFilter(table, students.sort((a, b) => a.lastName.localeCompare(b.lastName)), () => true);
+                break;
+        }
+    }));
 }
 //filters 
 window.onload = function () {
-    refreshTable(selectTable(), students);
+    refreshTablewithFilter(selectTable(), students, () => true);
+    filters(selectTable(), students);
 };

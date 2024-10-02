@@ -15,7 +15,7 @@ h1 {
     text-align: center;
     margin-bottom: 24px;
     }
-/* 
+
 section.filter {
     padding: 16px 0;
 }
@@ -23,6 +23,7 @@ section.filter {
 section.filter .filters {
     display: flex;
     justify-content: center;
+    margin: 20px 0px;
 }
 
 section.filter p {
@@ -32,17 +33,21 @@ section.filter p {
 
 section.filter .filters button {
     margin: 0 4px;
-    border: 1px solid lightgrey;
+    border: 1px solid rgba(205, 202, 202, 0.811);
     background-color: transparent;
     padding: 8px 12px;
     cursor: pointer;
+}
+
+section.filter .filters input {
+    margin-left: 20px;
 }
 
 section.filter .filters button.selected {
     background-color: #3365b3;
     border: 1px solid #3365b3;
     color: #fff;
-} */
+}
 
 table {
     border-collapse: collapse;
