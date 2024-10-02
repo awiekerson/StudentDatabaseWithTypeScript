@@ -76,35 +76,30 @@ function filters(table: HTMLTableElement, student: Student[]) {
 
     document.querySelector('#all')?.classList.add('selected');
 
-
     const buttons = document.querySelectorAll('button');
 
     buttons.forEach((button) => 
         button.addEventListener('click', () => {
+            clearSelected();
             const id = button.id;
             switch (id) {
                 case 'all':
-                    clearSelected();
                     document.querySelector('#all')?.classList.add('selected');
                     refreshTablewithFilter(selectTable(), students, () => true);
                     break;
                 case 'active':
-                    clearSelected();
                     document.querySelector('#active')?.classList.add('selected');
                     refreshTablewithFilter(selectTable(), students, (student) => !student.dateRegistrationSuspended);
                     break;
                 case 'inactive':
-                    clearSelected();
                     document.querySelector('#inactive')?.classList.add('selected');
                     refreshTablewithFilter(selectTable(), students, (student) => !!student.dateRegistrationSuspended);
                     break;
                 case 'no-focus':
-                    clearSelected();
                     document.querySelector('#no-focus')?.classList.add('selected');
                     refreshTablewithFilter(selectTable(), students, (student) => !student.focusArea);
                     break;
                 case 'alphabetical-order':
-                    clearSelected();
                     document.querySelector('#alphabetical-order')?.classList.add('selected');
                     refreshTablewithFilter(table, students.sort((a, b) => a.lastName.localeCompare(b.lastName)), () => true); 
                     break;
@@ -114,8 +109,6 @@ function filters(table: HTMLTableElement, student: Student[]) {
 }
 
 //filters 
-
-
 
 window.onload = function () {
     refreshTablewithFilter(selectTable(), students, () => true);
