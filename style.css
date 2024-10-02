@@ -23,7 +23,6 @@ section.filter {
 section.filter .filters {
     display: flex;
     justify-content: center;
-    margin: 20px 0px;
 }
 
 section.filter p {

@@ -72,6 +72,7 @@ function clearSelected() {
 }
 
 
+
 function filters(table: HTMLTableElement, student: Student[]) {
 
     document.querySelector('#all')?.classList.add('selected');
