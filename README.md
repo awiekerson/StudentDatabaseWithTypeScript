@@ -1,7 +1,7 @@
 <b> Student Database with FIlters </b> 
 
-I developed a dynamic student database that reads and parses data from a JSON file to automatically populate student 
-information. The system includes 5 distinct filters that accurately display students based on various criteria. 
+I developed a student database that reads and parses data using JSON to populate student
+information dynamically. The database includes 5 distinct filters that accurately display students based on various criteria. 
 I designed the filtering functionality to be highly efficient and to minimize code redundancy while 
 ensuring adaptability across different filter combinations. 
 
